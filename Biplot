@@ -7,3 +7,7 @@ library(factoextra)
 PCA1 <- select(Final, lnTotal_phytoestrogens, lnrfs, lnTotal_phytoestrogensTer)
 PCA1_pca <- prcomp(PCA1, scale = TRUE)
 fviz_pca_biplot(PCA1_pca, label = 'var', habillage = Final$ER)
+
+fviz_pca_ind(PCA1_pca, label = 'var', habillage = rfsoct, addEllipses = TRUE)
+
+fviz_pca_var(PCA1_pca)
